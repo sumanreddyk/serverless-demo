@@ -1,0 +1,633 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "LambdaDeploymentStackApplication": {
+        "id": "LambdaDeploymentStackApplication",
+        "path": "LambdaDeploymentStackApplication",
+        "children": {
+          "AutoSmogStore": {
+            "id": "AutoSmogStore",
+            "path": "LambdaDeploymentStackApplication/AutoSmogStore",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaDeploymentStackApplication/AutoSmogStore/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::DynamoDB::Table",
+                  "aws:cdk:cloudformation:props": {
+                    "keySchema": [
+                      {
+                        "attributeName": "hash",
+                        "keyType": "HASH"
+                      },
+                      {
+                        "attributeName": "createdAt",
+                        "keyType": "RANGE"
+                      }
+                    ],
+                    "attributeDefinitions": [
+                      {
+                        "attributeName": "hash",
+                        "attributeType": "S"
+                      },
+                      {
+                        "attributeName": "createdAt",
+                        "attributeType": "N"
+                      }
+                    ],
+                    "provisionedThroughput": {
+                      "readCapacityUnits": 5,
+                      "writeCapacityUnits": 5
+                    }
+                  }
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "LambdaDeploymentStackApplication/AutoSmogStore/ScalingRole"
+              }
+            }
+          },
+          "Lambda": {
+            "id": "Lambda",
+            "path": "LambdaDeploymentStackApplication/Lambda",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "LambdaDeploymentStackApplication/Lambda/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/Lambda/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "LambdaDeploymentStackApplication/Lambda/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "LambdaDeploymentStackApplication/Lambda/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "dynamodb:BatchWriteItem",
+                                    "dynamodb:PutItem",
+                                    "dynamodb:UpdateItem",
+                                    "dynamodb:DeleteItem"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": [
+                                    {
+                                      "Fn::GetAtt": [
+                                        "AutoSmogStoreDBA4F0B6",
+                                        "Arn"
+                                      ]
+                                    },
+                                    {
+                                      "Ref": "AWS::NoValue"
+                                    }
+                                  ]
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "LambdaServiceRoleDefaultPolicyDAE46E21",
+                            "roles": [
+                              {
+                                "Ref": "LambdaServiceRoleA8ED4D3B"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "LambdaSourceBucketNameParameter": {
+                "id": "LambdaSourceBucketNameParameter",
+                "path": "LambdaDeploymentStackApplication/Lambda/LambdaSourceBucketNameParameter"
+              },
+              "LambdaSourceObjectKeyParameter": {
+                "id": "LambdaSourceObjectKeyParameter",
+                "path": "LambdaDeploymentStackApplication/Lambda/LambdaSourceObjectKeyParameter"
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaDeploymentStackApplication/Lambda/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "LambdaLambdaSourceBucketNameParameter159473FC"
+                      },
+                      "s3Key": {
+                        "Ref": "LambdaLambdaSourceObjectKeyParameter06573F1D"
+                      }
+                    },
+                    "handler": "../lambda/index.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "LambdaServiceRoleA8ED4D3B",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "description": "Function generated on: 2020-11-02T14:36:55.005Z",
+                    "environment": {
+                      "variables": {
+                        "TABLE_NAME": {
+                          "Ref": "AutoSmogStoreDBA4F0B6"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Version2020-11-02T14:36:55.005Z": {
+                "id": "Version2020-11-02T14:36:55.005Z",
+                "path": "LambdaDeploymentStackApplication/Lambda/Version2020-11-02T14:36:55.005Z",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/Lambda/Version2020-11-02T14:36:55.005Z/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::Lambda::Version",
+                      "aws:cdk:cloudformation:props": {
+                        "functionName": {
+                          "Ref": "LambdaD247545B"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "LambdaAlias": {
+            "id": "LambdaAlias",
+            "path": "LambdaDeploymentStackApplication/LambdaAlias",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaDeploymentStackApplication/LambdaAlias/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Alias",
+                  "aws:cdk:cloudformation:props": {
+                    "functionName": {
+                      "Ref": "LambdaD247545B"
+                    },
+                    "functionVersion": {
+                      "Fn::GetAtt": [
+                        "LambdaVersion20201102T143655005ZE6114CAF",
+                        "Version"
+                      ]
+                    },
+                    "name": "Prod"
+                  }
+                }
+              },
+              "ScalingRole": {
+                "id": "ScalingRole",
+                "path": "LambdaDeploymentStackApplication/LambdaAlias/ScalingRole"
+              }
+            }
+          },
+          "DeploymentGroup": {
+            "id": "DeploymentGroup",
+            "path": "LambdaDeploymentStackApplication/DeploymentGroup",
+            "children": {
+              "Application": {
+                "id": "Application",
+                "path": "LambdaDeploymentStackApplication/DeploymentGroup/Application",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/DeploymentGroup/Application/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::CodeDeploy::Application",
+                      "aws:cdk:cloudformation:props": {
+                        "computePlatform": "Lambda"
+                      }
+                    }
+                  }
+                }
+              },
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "LambdaDeploymentStackApplication/DeploymentGroup/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/DeploymentGroup/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": {
+                                  "Fn::Join": [
+                                    "",
+                                    [
+                                      "codedeploy.",
+                                      {
+                                        "Ref": "AWS::Region"
+                                      },
+                                      ".",
+                                      {
+                                        "Ref": "AWS::URLSuffix"
+                                      }
+                                    ]
+                                  ]
+                                }
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSCodeDeployRoleForLambdaLimited"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaDeploymentStackApplication/DeploymentGroup/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CodeDeploy::DeploymentGroup",
+                  "aws:cdk:cloudformation:props": {
+                    "applicationName": {
+                      "Ref": "DeploymentGroupApplication7B89ABEB"
+                    },
+                    "serviceRoleArn": {
+                      "Fn::GetAtt": [
+                        "DeploymentGroupServiceRoleA00955F3",
+                        "Arn"
+                      ]
+                    },
+                    "autoRollbackConfiguration": {
+                      "enabled": true,
+                      "events": [
+                        "DEPLOYMENT_FAILURE"
+                      ]
+                    },
+                    "deploymentConfigName": "CodeDeployDefault.LambdaLinear10PercentEvery1Minute",
+                    "deploymentStyle": {
+                      "deploymentType": "BLUE_GREEN",
+                      "deploymentOption": "WITH_TRAFFIC_CONTROL"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AutoSmogAPI": {
+            "id": "AutoSmogAPI",
+            "path": "LambdaDeploymentStackApplication/AutoSmogAPI",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::RestApi",
+                  "aws:cdk:cloudformation:props": {
+                    "description": "CDK-powered form POST handler.",
+                    "name": "Auto Smog Service for "
+                  }
+                }
+              },
+              "CloudWatchRole": {
+                "id": "CloudWatchRole",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/CloudWatchRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/AutoSmogAPI/CloudWatchRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "apigateway.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "Account": {
+                "id": "Account",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Account",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ApiGateway::Account",
+                  "aws:cdk:cloudformation:props": {
+                    "cloudWatchRoleArn": {
+                      "Fn::GetAtt": [
+                        "AutoSmogAPICloudWatchRoleB7B38A87",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              },
+              "Deployment": {
+                "id": "Deployment",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Deployment",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Deployment/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Deployment",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "AutoSmogAPIB69AE8E0"
+                        },
+                        "description": "Automatically created by the RestApi construct"
+                      }
+                    }
+                  }
+                }
+              },
+              "DeploymentStage.prod": {
+                "id": "DeploymentStage.prod",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/DeploymentStage.prod",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "LambdaDeploymentStackApplication/AutoSmogAPI/DeploymentStage.prod/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ApiGateway::Stage",
+                      "aws:cdk:cloudformation:props": {
+                        "restApiId": {
+                          "Ref": "AutoSmogAPIB69AE8E0"
+                        },
+                        "deploymentId": {
+                          "Ref": "AutoSmogAPIDeploymentB4B341C15b565c10bec3a86bc3f40106d53cec74"
+                        },
+                        "stageName": "prod"
+                      }
+                    }
+                  }
+                }
+              },
+              "Endpoint": {
+                "id": "Endpoint",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Endpoint"
+              },
+              "Default": {
+                "id": "Default",
+                "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Default",
+                "children": {
+                  "POST": {
+                    "id": "POST",
+                    "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST",
+                    "children": {
+                      "ApiPermission.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..": {
+                        "id": "ApiPermission.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..",
+                        "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST/ApiPermission.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                          "aws:cdk:cloudformation:props": {
+                            "action": "lambda:InvokeFunction",
+                            "functionName": {
+                              "Fn::GetAtt": [
+                                "LambdaD247545B",
+                                "Arn"
+                              ]
+                            },
+                            "principal": "apigateway.amazonaws.com",
+                            "sourceArn": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":execute-api:",
+                                  {
+                                    "Ref": "AWS::Region"
+                                  },
+                                  ":",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":",
+                                  {
+                                    "Ref": "AutoSmogAPIB69AE8E0"
+                                  },
+                                  "/",
+                                  {
+                                    "Ref": "AutoSmogAPIDeploymentStageprod14A6426F"
+                                  },
+                                  "/POST/"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "ApiPermission.Test.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..": {
+                        "id": "ApiPermission.Test.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..",
+                        "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST/ApiPermission.Test.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::Lambda::Permission",
+                          "aws:cdk:cloudformation:props": {
+                            "action": "lambda:InvokeFunction",
+                            "functionName": {
+                              "Fn::GetAtt": [
+                                "LambdaD247545B",
+                                "Arn"
+                              ]
+                            },
+                            "principal": "apigateway.amazonaws.com",
+                            "sourceArn": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "arn:",
+                                  {
+                                    "Ref": "AWS::Partition"
+                                  },
+                                  ":execute-api:",
+                                  {
+                                    "Ref": "AWS::Region"
+                                  },
+                                  ":",
+                                  {
+                                    "Ref": "AWS::AccountId"
+                                  },
+                                  ":",
+                                  {
+                                    "Ref": "AutoSmogAPIB69AE8E0"
+                                  },
+                                  "/test-invoke-stage/POST/"
+                                ]
+                              ]
+                            }
+                          }
+                        }
+                      },
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ApiGateway::Method",
+                          "aws:cdk:cloudformation:props": {
+                            "httpMethod": "POST",
+                            "resourceId": {
+                              "Fn::GetAtt": [
+                                "AutoSmogAPIB69AE8E0",
+                                "RootResourceId"
+                              ]
+                            },
+                            "restApiId": {
+                              "Ref": "AutoSmogAPIB69AE8E0"
+                            },
+                            "authorizationType": "NONE",
+                            "integration": {
+                              "type": "AWS_PROXY",
+                              "uri": {
+                                "Fn::Join": [
+                                  "",
+                                  [
+                                    "arn:",
+                                    {
+                                      "Ref": "AWS::Partition"
+                                    },
+                                    ":apigateway:",
+                                    {
+                                      "Ref": "AWS::Region"
+                                    },
+                                    ":lambda:path/2015-03-31/functions/",
+                                    {
+                                      "Fn::GetAtt": [
+                                        "LambdaD247545B",
+                                        "Arn"
+                                      ]
+                                    },
+                                    "/invocations"
+                                  ]
+                                ]
+                              },
+                              "integrationHttpMethod": "POST",
+                              "requestTemplates": {
+                                "application/json": "{ \"statusCode\": \"200\" }"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "parsePredictionsclicmd": {
+            "id": "parsePredictionsclicmd",
+            "path": "LambdaDeploymentStackApplication/parsePredictionsclicmd"
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "LambdaDeploymentStackApplication/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "LambdaDeploymentStackApplication/CDKMetadata/Default"
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "LambdaDeploymentStackApplication/CDKMetadata/Condition"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

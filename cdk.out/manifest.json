@@ -1,0 +1,674 @@
+{
+  "version": "6.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "LambdaDeploymentStackApplication": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "LambdaDeploymentStackApplication.template.json"
+      },
+      "metadata": {
+        "/LambdaDeploymentStackApplication/AutoSmogStore/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogStoreDBA4F0B6",
+            "trace": [
+              "new Table (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:893:18)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:26:21)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/Lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaServiceRoleA8ED4D3B",
+            "trace": [
+              "new Role (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new Function (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function.ts:539:31)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:31:29)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/Lambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaServiceRoleDefaultPolicyDAE46E21",
+            "trace": [
+              "new Policy (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-iam/lib/policy.ts:141:22)",
+              "Role.addToPrincipalPolicy (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-iam/lib/role.ts:368:28)",
+              "Function.addToPrincipal (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-iam/lib/grant.ts:168:61)",
+              "Table.combinedGrant (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:716:29)",
+              "Table.grantWriteData (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-dynamodb/lib/table.ts:597:17)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:65:11)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/Lambda/LambdaSourceBucketNameParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaLambdaSourceBucketNameParameter159473FC",
+            "trace": [
+              "CfnParametersCode.bind (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/code.ts:262:31)",
+              "new Function (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function.ts:559:29)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:31:29)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/Lambda/LambdaSourceObjectKeyParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaLambdaSourceObjectKeyParameter06573F1D",
+            "trace": [
+              "CfnParametersCode.bind (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/code.ts:268:30)",
+              "new Function (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function.ts:559:29)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:31:29)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/Lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaD247545B",
+            "trace": [
+              "new Function (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function.ts:593:35)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:31:29)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/Lambda/Version2020-11-02T14:36:55.005Z/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaVersion20201102T143655005ZE6114CAF",
+            "trace": [
+              "new Version (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/lambda-version.ts:187:21)",
+              "Function.addVersion (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function.ts:742:12)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:43:37)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/LambdaAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LambdaAlias9C15A666",
+            "trace": [
+              "new Alias (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/alias.ts:148:19)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:44:19)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/DeploymentGroup/Application/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentGroupApplication7B89ABEB",
+            "trace": [
+              "new LambdaApplication (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-codedeploy/lib/lambda/application.ts:67:22)",
+              "new LambdaDeploymentGroup (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-codedeploy/lib/lambda/deployment-group.ts:154:45)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:49:5)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/DeploymentGroup/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentGroupServiceRoleA00955F3",
+            "trace": [
+              "new Role (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "new LambdaDeploymentGroup (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-codedeploy/lib/lambda/deployment-group.ts:157:31)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:49:5)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/DeploymentGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeploymentGroup6D277AF0",
+            "trace": [
+              "new LambdaDeploymentGroup (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-codedeploy/lib/lambda/deployment-group.ts:164:22)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:49:5)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIB69AE8E0",
+            "trace": [
+              "new RestApi (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:673:22)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:55:17)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPICloudWatchRoleB7B38A87",
+            "trace": [
+              "new Role (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-iam/lib/role.ts:327:18)",
+              "RestApi.configureCloudWatchRole (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:480:18)",
+              "new RestApi (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:690:12)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:55:17)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIAccount99452AFC",
+            "trace": [
+              "RestApi.configureCloudWatchRole (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:485:22)",
+              "new RestApi (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:690:12)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:55:17)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIDeploymentB4B341C15b565c10bec3a86bc3f40106d53cec74",
+            "trace": [
+              "new Deployment (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/deployment.ts:71:21)",
+              "RestApi.configureDeployment (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:496:32)",
+              "new RestApi (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:693:10)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:55:17)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIDeploymentStageprod14A6426F",
+            "trace": [
+              "new Stage (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/stage.ts:240:22)",
+              "RestApi.configureDeployment (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:506:30)",
+              "new RestApi (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:693:10)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:55:17)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIEndpointE4E16C5B",
+            "trace": [
+              "RestApi.configureDeployment (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:511:7)",
+              "new RestApi (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/restapi.ts:693:10)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:55:17)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST/ApiPermission.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIPOSTApiPermissionLambdaDeploymentStackApplicationAutoSmogAPI30842B29POST19A4B4A3",
+            "trace": [
+              "Function.addPermission (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:221:5)",
+              "LambdaIntegration.bind (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:61:18)",
+              "new Method (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "RootResource.addMethod (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:64:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST/ApiPermission.Test.LambdaDeploymentStackApplicationAutoSmogAPI30842B29.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIPOSTApiPermissionTestLambdaDeploymentStackApplicationAutoSmogAPI30842B29POST59BA7627",
+            "trace": [
+              "Function.addPermission (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-lambda/lib/function-base.ts:221:5)",
+              "LambdaIntegration.bind (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/integrations/lambda.ts:69:20)",
+              "new Method (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:197:36)",
+              "RootResource.addMethod (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:64:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/AutoSmogAPI/Default/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AutoSmogAPIPOSTC771B207",
+            "trace": [
+              "new Method (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/method.ts:215:22)",
+              "RootResource.addMethod (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/aws-apigateway/lib/resource.ts:187:12)",
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:64:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/parsePredictionsclicmd": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "parsePredictionsclicmd",
+            "trace": [
+              "new LambdaDeploymentStack (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/lib/lambda-deployment-stack.ts:67:5)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/bin/lambda-deployment.ts:9:1)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Module.m._compile (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:858:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Object.require.extensions.(anonymous function) [as .ts] (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/index.ts:861:12)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "main (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:227:14)",
+              "Object.<anonymous> (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/ts-node/src/bin.ts:513:3)",
+              "Module._compile (internal/modules/cjs/loader.js:689:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)",
+              "Module.load (internal/modules/cjs/loader.js:599:32)",
+              "tryModuleLoad (internal/modules/cjs/loader.js:538:12)",
+              "Function.Module._load (internal/modules/cjs/loader.js:530:3)",
+              "Function.Module.runMain (internal/modules/cjs/loader.js:742:12)",
+              "findNodeScript.then.existing (/usr/local/lib/node_modules/npm/node_modules/libnpx/index.js:268:14)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:51:24)",
+              "construct (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5)",
+              "visit (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/stage.ts:177:23)",
+              "process.App.process.once (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:273:13)",
+              "process.emit (events.js:182:13)",
+              "process.EventEmitter.emit (domain.js:441:20)",
+              "process.emit (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/source-map-support/source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:120:23)"
+            ]
+          }
+        ],
+        "/LambdaDeploymentStackApplication/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/metadata-resource.ts:60:27)",
+              "construct (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:140:5)",
+              "visit (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:200:5)",
+              "visit (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:196:5)",
+              "injectMetadataResources (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:131:3)",
+              "Object.synthesize (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/private/synthesis.ts:18:3)",
+              "App.synth (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/stage.ts:177:23)",
+              "process.App.process.once (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/@aws-cdk/core/lib/app.ts:123:45)",
+              "Object.onceWrapper (events.js:273:13)",
+              "process.emit (events.js:182:13)",
+              "process.EventEmitter.emit (domain.js:441:20)",
+              "process.emit (/Users/sumanreddyk/AWS/AWS-CDK/typescript/Lambda-deployment/node_modules/source-map-support/source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:120:23)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
